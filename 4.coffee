@@ -5,16 +5,10 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 ###
 
 palindromic = (n) ->
-  i = 0
-  a = []
-
-  while n > 0
-    m = (n % 10)
-    n = (n - m) / 10
-    a[i++] = m
+  a = n.toString()
 
   for i in [0..Math.floor(a.length / 2) - 1]
-    if a[i] != a[a.length - 1 - i]
+    if a.charAt(i) != a.charAt(a.length - 1 - i)
       return false
 
   true
